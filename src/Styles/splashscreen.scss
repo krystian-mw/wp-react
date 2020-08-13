@@ -1,0 +1,60 @@
+.splashscreen {
+  display: flex;
+  .wrapper {
+    margin: auto;
+    width: 200px;
+  }
+  .path {
+    position: absolute;
+    width: 80px;
+    height: 160px;
+    margin: 10px 50px;
+    border: 10px solid lightgrey;
+    border-radius: 50%;
+    display: block;
+
+    .dot {
+      position: relative;
+      margin: -20px auto;
+      background: red;
+      border: 15px solid red;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      animation: rotateDots 0.5s infinite;
+      animation-timing-function: linear;
+    }
+  }
+
+  .d0 {
+    transform: rotate(0deg);
+  }
+  .d45 {
+    transform: rotate(135deg);
+  }
+  .d135 {
+    transform: rotate(225deg);
+  }
+
+  @keyframes rotateDots {
+    0% {
+      transform: translate(0px, 0px);
+    }
+
+    25% {
+      transform: translate(40px, 80px);
+    }
+
+    50% {
+      transform: translate(0px, 160px);
+    }
+
+    75% {
+      transform: translate(-40px, 80px);
+    }
+
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+}
