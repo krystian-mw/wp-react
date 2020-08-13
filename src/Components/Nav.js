@@ -94,7 +94,7 @@ class Nav extends React.Component {
                 out.push(
                   <Link
                     key={item.title}
-                    className="dropdown-item p-3"
+                    className="dropdown-item"
                     to={item.url}
                   >
                     {item.title}
@@ -108,6 +108,10 @@ class Nav extends React.Component {
                     this.state[`nav-${item.id}`] ? "show" : ""
                   }`}
                 >
+                  <Link className="dropdown-item" to={item.url}>
+                    {item.title}
+                  </Link>
+                  <div className="dropdown-divider"></div>
                   {out}
                 </div>
               );
@@ -121,7 +125,8 @@ class Nav extends React.Component {
 
   render() {
     // return this._isMounted ? (
-      return <div className="navbar navbar-expand-lg navbar-light bg-light rounded">
+    return (
+      <div className="navbar navbar-expand-lg navbar-light bg-light rounded">
         <Logo />
         <NavbarToggler onClick={this.toggleNav} />
         <ul
@@ -132,6 +137,7 @@ class Nav extends React.Component {
           <this.renderNavMenu />
         </ul>
       </div>
+    );
     // ) : null;
   }
 }
